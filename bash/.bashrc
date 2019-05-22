@@ -124,7 +124,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # open vim with clientserver for vimtex-capabilities
 alias vim='vim --servername VIM'
-
-# conda activation
-. /home/philipp/anaconda3/etc/profile.d/conda.sh
-conda activate

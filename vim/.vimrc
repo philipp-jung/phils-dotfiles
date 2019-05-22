@@ -104,7 +104,7 @@ if has("nvim")
 endif
 
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>f :Goyo | :set background=light | :set linebreak
 
 " Ale provides linting
 	let g:ale_lint_on_enter = 0
@@ -146,7 +146,7 @@ endif
 " Enable Goyo by default for mutt writting
 	" Goyo's width will be the line limit in mutt.
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo \| set bg=light
+	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | :set background=light
 
 " Automatically deletes all trailing whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
