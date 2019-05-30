@@ -124,3 +124,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # open vim with clientserver for vimtex-capabilities
 alias vim='vim --servername VIM'
+
+# set vim-keybindings for bash
+set -o vi

@@ -9,6 +9,7 @@ let mapleader =","
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'editorconfig/editorconfig-vim'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
@@ -60,7 +61,7 @@ noremap <F3> :Autoformat<CR>
 " Lightline config
 set laststatus=2
 let g:lightline = {
-	\ 'colorscheme': 'PaperColor',
+	\ 'colorscheme': 'one',
 	\ }
 
 let g:lightline.component_expand = {
