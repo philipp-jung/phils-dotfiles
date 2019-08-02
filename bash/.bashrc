@@ -1,12 +1,18 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# /.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -127,3 +133,15 @@ alias vim='vim --servername VIM'
 
 # set vim-keybindings for bash
 set -o vi
+
+# Alias for neovim
+alias vim='nvim'
+alias vi='nvim'
+
+# thesis shortcut
+activate_mlfd_venv () {
+    source ~/code/python-envs/mlfd/bin/activate
+    cd ~/Desktop/MLFD/
+    pwd
+}
+alias pymlfd=activate_mlfd_venv
