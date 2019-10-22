@@ -1,0 +1,6 @@
+# thesis shortcut
+pymlfd () {
+    source ~/code/python-envs/mlfd/bin/activate
+    cd ~/Desktop/MLFD/
+    pwd
+}

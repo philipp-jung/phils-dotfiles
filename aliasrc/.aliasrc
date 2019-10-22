@@ -1,0 +1,10 @@
+# Alias for neovim
+alias vim='nvim'
+alias vi='nvim'
+alias ls='ls --color=auto'
+alias l='ls -l --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+export FILE="ranger"
+export TERMINAL="kitty"

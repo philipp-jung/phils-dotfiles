@@ -48,11 +48,19 @@ set clipboard=unnamedplus
 
 	set encoding=utf-8
 	set number relativenumber
+    "
 " Enable autocompletion:
 	set wildmode=longest,list,full
 
 " Search
 set smartcase
+
+" Spell checking
+set spelllang=en
+" automatically enable spell checking
+" set spell
+nnoremap <silent> <F11> :set spell!<cr>
+inoremap <silent> <F11> <C-O>:set spell!<cr>
 
 " Tab and Indent configuration
 set expandtab
@@ -61,6 +69,10 @@ set shiftwidth=4
 
 " vim-autoformat
 noremap <F3> :Autoformat<CR>
+
+" vimtex
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
 
 " Lightline config
 set laststatus=2
@@ -172,11 +184,11 @@ endif
     " Phil's shortcuts
     autocmd FileType tex inoremap ,al \begin{align}<Enter><Enter>\end{align}<ESC>ki<Tab>
     autocmd FileType tex inoremap ,{ \{  \}<ESC>2hi
-    autocmd FileType tex inoremap ,( \(  \)<ESC>2hi
+    autocmd FileType tex inoremap ,( \(  \)<++><ESC>F\hi
+	autocmd FileType tex inoremap ,fr \frac{}{}<++><Esc>2F{a
 	" Word count:
 	autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
 	" Code snippets
-	autocmd FileType tex inoremap ,fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
 	autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
 	autocmd FileType tex inoremap ,bf \textbf{}<++><Esc>T{i
 	autocmd FileType tex vnoremap , <ESC>`<i\{<ESC>`>2la}<ESC>?\\{<Enter>a

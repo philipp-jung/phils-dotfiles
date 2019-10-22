@@ -40,6 +40,8 @@ set mouse=a
 set nohlsearch
 set clipboard=unnamedplus
 
+" Vimtex sync
+let g:vimtex_view_method = 'zathura'
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
