@@ -11,6 +11,10 @@
 
 ## PHILs CHANGES ##
 
+# Toggle Language
+exec "setxkbmap -layout de,us"
+exec "setxkbmap -option 'grp:win_space_toggle'"
+
 # Thinkpad T470
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10  # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10  # decrease screen brightness
@@ -111,7 +115,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
+# brauch ich nicht
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -192,6 +197,7 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# Changed the bar to support displaying current keyboard layout
 bar {
-        status_command i3status
+        status_command /home/phil/.config/i3status/keyboard_status.sh
 }
