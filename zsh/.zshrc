@@ -28,6 +28,9 @@ export PATH
 export PATH=/opt/transcribe/transcribe:$PATH
 export PATH=~/.local/bin:$PATH
 
+# Command history file location
+HISTFILE=/home/phil/.zhistory
+
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select

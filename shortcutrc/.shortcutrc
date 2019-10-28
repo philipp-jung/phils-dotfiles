@@ -4,3 +4,10 @@ pymlfd () {
     cd ~/Desktop/MLFD/
     pwd
 }
+
+# doovents shortcut
+pydoo () {
+    source ~/code/python-envs/doovents/bin/activate
+    cd ~/code/doovents/
+    pwd
+}
