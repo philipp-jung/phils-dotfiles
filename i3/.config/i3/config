@@ -12,8 +12,8 @@
 ## PHILs CHANGES ##
 
 # Toggle Language
-exec_always --no-startup-id setxkbmap -layout de,us
-exec_always --no-startup-id setxkbmap -option 'grp:win_space_toggle'
+exec_always --no-startup-id "sh -c 'sleep 10; setxkbmap -layout de,us'"
+exec_always --no-startup-id "setxkbmap -option 'grp:win_space_toggle'"
 
 # kill focused window
 bindsym $mod+q kill
