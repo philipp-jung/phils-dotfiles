@@ -8,15 +8,14 @@ zplug "lukechilds/zsh-nvm"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug load #--verbose  # needs this at the bottom
 
-# Luke's config for the Zoomer Shell
-
-# Enable colors and change prompt:
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# make a nice prompt
+PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
 
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
+
+# Luke's config for the Zoomer Shell
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]

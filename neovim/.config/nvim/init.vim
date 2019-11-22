@@ -129,7 +129,8 @@ endif
 	let g:ale_echo_msg_error_str = 'E'
 	let g:ale_echo_msg_warning_str = 'W'
 	let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-	let g:ale_linters = {'python': ['flake8']}
+	let g:ale_linters = { 'python': ['flake8'] }
+    let g:ale_fixers = { 'javascript': ['eslint'] }
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
 
