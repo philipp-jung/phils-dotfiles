@@ -12,23 +12,30 @@
 ## PHILs CHANGES ##
 
 # Toggle Language
-exec_always --no-startup-id "sh -c 'sleep 10; setxkbmap -layout de,us'"
+exec_always --no-startup-id "sh -c 'sleep 15; setxkbmap -layout de,us'"
 exec_always --no-startup-id "setxkbmap -option 'grp:win_space_toggle'"
 
 # kill focused window
 bindsym $mod+q kill
 
+# Start dunst for notifications. Optinally add -config <path-to-cfg>
+exec --no-startup-id dunst
+
 # Thinkpad T470
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10  # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10  # decrease screen brightness
 
-# new windows spliting style
+# New windows spliting style
 bindsym $mod+apostrophe		split horizontal ;; exec $term
 bindsym $mod+slash		split vertical ;; exec $term
 
-# VIM style keybindings
+# Distraction-free mode
+set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
+mode "$freeze" { bindsym $mod+Shift+f mode "default"
+}
 bindsym $mod+Shift+f		mode "$freeze" ;; exec --no-startup-id notify-send "Distraction-free mode activated." "Press Super+Shift+f to return."
 
+# VIM style keybindings
 bindsym $mod+g			workspace prev
 
 bindsym $mod+h			focus left

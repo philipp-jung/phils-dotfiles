@@ -12,9 +12,9 @@ do
     esac
     if [ $LG == "EN" ]
     then
-        dat="[{ \"full_text\": \"🇩🇪\" },"
-    else
         dat="[{ \"full_text\": \"🇺🇸\" },"
+    else
+        dat="[{ \"full_text\": \"🇩🇪\" },"
     fi
     echo "${line/[/$dat}" || exit 1
 done

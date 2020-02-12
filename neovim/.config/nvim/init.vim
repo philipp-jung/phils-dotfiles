@@ -10,6 +10,7 @@ let mapleader =","
 call plug#begin('~/.vim/plugged')
 
 Plug 'rakr/vim-one'
+Plug 'phb1/gtd.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
@@ -66,6 +67,11 @@ inoremap <silent> <F11> <C-O>:set spell!<cr>
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+" GTD config
+let g:gtd#dir ='~/gtd'
+let g:gtd#folding = 1
+let g:gtd#default_context = 'home' "erstmal nur für daheim austesten
 
 " vim-autoformat
 noremap <F3> :Autoformat<CR>
@@ -187,6 +193,10 @@ endif
     autocmd FileType tex inoremap ,{ \{  \}<ESC>2hi
     autocmd FileType tex inoremap ,( \(  \)<++><ESC>F\hi
 	autocmd FileType tex inoremap ,fr \frac{}{}<++><Esc>2F{a
+    "" For beamer
+    autocmd FileType tex inoremap ,bbf \begin{frame}<Enter>\frametitle{}<Enter>\end{frame}<ESC>k$i
+    autocmd FileType tex inoremap ,bbi \begin{itemize}<Enter>\item<Space><Enter>\end{itemize}<ESC>k$a
+
 	" Word count:
 	autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
 	" Code snippets
