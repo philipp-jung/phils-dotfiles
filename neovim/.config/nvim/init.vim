@@ -9,7 +9,8 @@ let mapleader =","
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'rakr/vim-one'
+Plug 'ayu-theme/ayu-vim'
+" Plug 'rakr/vim-one'
 Plug 'phb1/gtd.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'lervag/vimtex'
@@ -32,8 +33,9 @@ endif
 
 call plug#end()
 
-colorscheme one
-set background=light
+set termguicolors
+let ayucolor="light"
+colorscheme ayu
 
 set go=a
 set mouse=a
@@ -83,22 +85,22 @@ let g:vimtex_compiler_progname = 'nvr'
 " Lightline config
 set laststatus=2
 let g:lightline = {
-	\ 'colorscheme': 'one',
-	\ }
+    \ 'colorscheme': 'one',
+    \ }
 
 let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
+    \ 'linter_checking': 'lightline#ale#checking',
+    \ 'linter_warnings': 'lightline#ale#warnings',
+    \ 'linter_errors': 'lightline#ale#errors',
+    \ 'linter_ok': 'lightline#ale#ok',
+    \ }
 
 let g:lightline.component_type = {
-      \     'linter_checking': 'left',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'left',
-      \ }
+    \ 'linter_checking': 'left',
+    \ 'linter_warnings': 'warning',
+    \ 'linter_errors': 'error',
+    \ 'linter_ok': 'left',
+    \ }
 
 let g:lightline.active = { 'right': [[ 'lineinfo' ], [ 'percent' ], [ 'fileencoding' ], [ 'filetype' ], [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 

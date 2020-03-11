@@ -4,9 +4,18 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# Font
+font Operator Mono Book 10
+
 # Keyboard inputs
 input * xkb_layout "us,de"
 input * xkb_options "grp:win_space_toggle"
+
+# Keybindings
+bindsym F11 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym F12 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym F10 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 
 ### Variables
 #
@@ -25,14 +34,16 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/f31/default/normalish/f31.png fill
+set $laptop eDP-1
+set $monitor_at_home DP-4
+
+# Wallpapers
+output * bg /home/phil/Pictures/wallpapers/Art/C2aARMNXUAE7gr9.jpg fill
 
 # Phils docking station config
-# This doesn't work yet, need sway 1.2 to use below commands to manage displays.
-# set $laptop eDP-1
-# bindswitch --reload lid:on output $laptop disable
-# bindswitch --reload lid:off output $laptop enable
+# This needs sway>=1.2 to work
+bindswitch --reload lid:on output $laptop disable
+bindswitch --reload lid:off output $laptop enable
 
 #
 # Example configuration:
@@ -78,6 +89,9 @@ output * bg /usr/share/backgrounds/f31/default/normalish/f31.png fill
 
     # start your launcher
     bindsym $mod+d exec $menu
+
+    # kill focused window
+    bindsym $mod+q kill
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -145,6 +159,9 @@ output * bg /usr/share/backgrounds/f31/default/normalish/f31.png fill
 #
 # Layout stuff:
 #
+    # gaps
+    gaps inner 7
+
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
@@ -213,12 +230,14 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command while ~/.config/sway/sway_bar.sh; do sleep 1; done
 
     colors {
         statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #323232 #323232 #ffffff
+        separator #ffffff
     }
 }
 
