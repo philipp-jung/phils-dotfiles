@@ -1,9 +1,8 @@
 # Alias for zsh/bash
-alias open="xdg-open"
 alias vim="nvim"
 alias vi="nvim"
-alias ls="ls --color=auto"
-alias l="ls -l --color=auto"
+alias ls="exa -a"
+alias l="exa -l"
 export dc="docker-compose"
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
