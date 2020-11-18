@@ -10,7 +10,8 @@ let mapleader =","
 call plug#begin('~/.vim/plugged')
 
 Plug 'ayu-theme/ayu-vim'
-" Plug 'rakr/vim-one'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()}}
+Plug 'junegunn/fzf.vim'
 Plug 'phb1/gtd.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'lervag/vimtex'
@@ -129,7 +130,10 @@ if has("nvim")
 	augroup END
 endif
 
-" Goyo plugin makes text more readable when writing prose:
+" Open fuzzy finder
+    map <leader>m :GFiles <Enter>
+
+" Automatically fix with ALEFix
 	map <leader>f :ALEFix <Enter>
 
 " Ale provides linting
