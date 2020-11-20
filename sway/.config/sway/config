@@ -38,7 +38,7 @@ set $laptop eDP-1
 set $monitor_at_home DP-4
 
 # Wallpapers
-output * bg /home/phil/Pictures/wallpapers/Art/C2aARMNXUAE7gr9.jpg fill
+output * bg /home/phil/Pictures/wallpapers/Animals/14596759908_f63214b1d3_o.jpg stretch
 
 # Phils docking station config
 # This needs sway>=1.2 to work

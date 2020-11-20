@@ -11,3 +11,17 @@ pydoo () {
     cd ~/code/doovents/
     pwd
 }
+
+# DepDetector shortcut
+pydep () {
+    source ~/code/DepDetector/.venv/bin/activate
+    cd ~/code/DepDetector
+    pwd
+}
+
+# AutoGluon shortcut
+gluon () {
+    source ~/code/python-envs/autogluon/bin/activate
+    cd ~/code/autogluon
+    pwd
+}
