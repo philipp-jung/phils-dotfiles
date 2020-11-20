@@ -87,7 +87,7 @@ let g:tex_flavor = 'latex'
 " Lightline config
 set laststatus=2
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'ayu_light',
     \ }
 
 let g:lightline.component_expand = {

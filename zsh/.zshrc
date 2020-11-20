@@ -88,3 +88,12 @@ bindkey '^e' edit-command-line
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.shortcutrc" ] && source "$HOME/.shortcutrc"
 [ -f "$HOME/.aliasrc" ] && source "$HOME/.aliasrc"
+
+# Fix for PyCharm
+_JAVA_AWT_WM_NONREPARENTING=1
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/phil/google-cloud-sdk/path.zsh.inc' ]; then . '/home/phil/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/phil/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/phil/google-cloud-sdk/completion.zsh.inc'; fi
